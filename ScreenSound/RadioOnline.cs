@@ -1,7 +1,0 @@
-﻿
-namespace ScreenSound
-{
-    class RadioOnline
-    {
-    }
-}
