@@ -1,0 +1,7 @@
+﻿
+namespace ScreenSound
+{
+     class EstatisticasUsuario
+    {
+    }
+}

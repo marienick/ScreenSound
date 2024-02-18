@@ -1,5 +1,4 @@
-﻿//Teste 
-Dictionary<string, List<int>> Bandas = new Dictionary<string, List<int>>();
+﻿Dictionary<string, List<int>> Bandas = new Dictionary<string, List<int>>();
 
 void ExibirBoasVindas()
 {
