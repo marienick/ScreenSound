@@ -2,25 +2,29 @@
 
 namespace ScreenSound.Modelos
 {
-    internal class Banda
+    // A classe banda implementa a interface avaliável
+    internal class Banda : IAvaliavel
     {
-        private List<Album> albuns = new List<Album>();
+        public List<Album> albuns = new List<Album>();
         private List<AvaliacaoMusica> notas = new List<AvaliacaoMusica>();
+        public Banda(string nome)
+        {
+            Nome = nome;
+        }
+        public string Nome { get; }
+
+        // ctrl + k + c : comenta todo código selecionado.
+        // ctrl + k + u : descomenta todo código selecionado.
+
         public double Media
         {
             get
             {
                 if (notas.Count == 0) return 0;
-                else return  notas.Average(a => a.Nota);
+                else return notas.Average(a => a.Nota);
             }
         }
 
-        public string Nome { get; }
-
-        public Banda(string nome)
-        {
-            Nome = nome;
-        }
         public void AdicionarAlbum(Album album)
         {
             albuns.Add(album);

@@ -2,12 +2,24 @@
 
 namespace ScreenSound.Modelos
 {
-    internal class Album
+    // Aperta ctrl + . para implementar a interface e depois corrige os erros
+    internal class Album : IAvaliavel
     {
-        public List<Musica> AlbumDeMusicas = new List<Musica>();
+        private List<Musica> AlbumDeMusicas = new();
+        private List<AvaliacaoMusica> notas = new();
         public string Nome { get; }
         public string Artista { get; set; }
         public int DuracaoTotal => AlbumDeMusicas.Sum(m => m.Duracao);
+
+        public double Media
+        {
+            get
+            {
+                if (notas.Count == 0) return 0;
+                else return notas.Average(a => a.Nota);
+            }
+        }
+
         public static int ContadorDeObjetos = 0;
 
         public Album(string nome, string artista)
@@ -35,6 +47,10 @@ namespace ScreenSound.Modelos
             }
             Console.WriteLine($"\nPara ouvir este álbum inteiro é necessário {DuracaoTotal} minutos.");
         }
-        
+
+        public void AdicionarNota(AvaliacaoMusica nota)
+        {
+            notas.Add(nota);
+        }
     }
 }

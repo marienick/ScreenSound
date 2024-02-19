@@ -1,7 +1,7 @@
 ﻿
 namespace ScreenSound.Modelos
 {
-    internal class Musica
+    internal class Musica //: IAvaliavel
     {
         public string Nome {  get;  }
         public Banda Artista {  get; set; }
@@ -9,13 +9,14 @@ namespace ScreenSound.Modelos
         private bool Disponivel { get; set; }
         public Genero Genero { get; set; }
         public LetraMusica Letra { get; }
-        public Musica(string nome, Banda artista, int duracao, bool disponivel, Genero genero)
+        public Musica(string nome, Banda artista, int duracao, bool disponivel, Genero genero, LetraMusica letra)
         {
             Nome = nome;
             Artista = artista;
             Duracao = duracao;
             Disponivel = disponivel;
             Genero = genero;
+            Letra = letra;  
         }
         public void ExibirFichaTecnica()
         {
