@@ -1,6 +1,14 @@
-﻿using ScreenSound.Modelos;
+﻿//ctrl + alt + l: Abrir gerenciador de soluções.
+
+using ScreenSound.Modelos;
 using ScreenSound.Menus;
-//ctrl + alt + l: Abrir gerenciador de soluções.
+
+////using OpenAI_API;
+////var client = new OpenAIAPI("sk - Z3H8bZ6Wf4GQ4lb8pxyxT3BlbkFJTnBCwDlqwdy6lPXmtWTO");
+//var chat = client.Chat.CreateConversation();
+//chat.AppendSystemMessage("Resuma a banda Artic Monkeys em um parágrafo de maneira informal.");
+//string resposta = await chat.GetResponseFromChatbotAsync();
+//Console.WriteLine(resposta);
 
 Dictionary<string, Banda> bandasRegistradas = new Dictionary<string, Banda>();
 Dictionary <int,Menu> opcoes = new();

@@ -1,5 +1,4 @@
 ﻿
-
 namespace ScreenSound.Modelos
 {
     // A classe banda implementa a interface avaliável
@@ -7,7 +6,7 @@ namespace ScreenSound.Modelos
     {
         public List<Album> albuns = new List<Album>();
         //Pra quê que isso serve?
-        public IEnumerable<Album> Albuns => albuns;
+        //public IEnumerable<Album> Albuns => albuns;
         private List<AvaliacaoMusica> notas = new List<AvaliacaoMusica>();
         public Banda(string nome)
         {
