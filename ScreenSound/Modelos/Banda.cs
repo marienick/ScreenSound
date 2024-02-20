@@ -6,6 +6,8 @@ namespace ScreenSound.Modelos
     internal class Banda : IAvaliavel
     {
         public List<Album> albuns = new List<Album>();
+        //Pra quê que isso serve?
+        public IEnumerable<Album> Albuns => albuns;
         private List<AvaliacaoMusica> notas = new List<AvaliacaoMusica>();
         public Banda(string nome)
         {

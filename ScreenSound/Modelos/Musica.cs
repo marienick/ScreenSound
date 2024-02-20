@@ -1,22 +1,36 @@
 ﻿
 namespace ScreenSound.Modelos
 {
-    internal class Musica //: IAvaliavel
+    internal class Musica : IAvaliavel
     {
         public string Nome {  get;  }
         public Banda Artista {  get; set; }
         public int Duracao { get; set; }
         private bool Disponivel { get; set; }
-        public Genero Genero { get; set; }
-        public LetraMusica Letra { get; }
-        public Musica(string nome, Banda artista, int duracao, bool disponivel, Genero genero, LetraMusica letra)
+
+        public double Media
+        {
+            get
+            {
+                if (notas.Count == 0) return 0;
+                else
+                {
+                    return notas.Average(n => n.Nota);
+                }
+            }
+        }
+
+        public List<AvaliacaoMusica> notas = new List<AvaliacaoMusica>();
+        //public Genero Genero { get; set; }
+        //public LetraMusica Letra { get; }
+        public Musica(string nome, Banda artista, int duracao)
         {
             Nome = nome;
             Artista = artista;
             Duracao = duracao;
-            Disponivel = disponivel;
-            Genero = genero;
-            Letra = letra;  
+            //Disponivel = disponivel;
+            //Genero = genero;
+            //Letra = letra;  
         }
         public void ExibirFichaTecnica()
         {
@@ -30,9 +44,9 @@ namespace ScreenSound.Modelos
                 Console.WriteLine("Adquira o plano Plus+");
             }
         }
-        public override string ToString()
+        public void AdicionarNota(AvaliacaoMusica nota)
         {
-            return $"´Nome: {Nome}\nArtista: {Artista}";
+            notas.Add(nota);
         }
 
     }

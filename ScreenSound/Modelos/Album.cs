@@ -5,7 +5,7 @@ namespace ScreenSound.Modelos
     // Aperta ctrl + . para implementar a interface e depois corrige os erros
     internal class Album : IAvaliavel
     {
-        private List<Musica> AlbumDeMusicas = new();
+        public List<Musica> AlbumDeMusicas = new();
         private List<AvaliacaoMusica> notas = new();
         public string Nome { get; }
         public string Artista { get; set; }

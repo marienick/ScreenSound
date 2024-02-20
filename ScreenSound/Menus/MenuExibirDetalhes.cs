@@ -16,6 +16,11 @@ namespace ScreenSound.Menus
             {
                 Banda banda = bandasRegistradas[nomeDaBanda];
                 Console.WriteLine($"Nome da banda: {nomeDaBanda}\nMédia de notas: {banda.Media}");
+                Console.WriteLine("Discografia:");
+                foreach(Album a in banda.albuns)
+                {
+                    Console.WriteLine($"Álbum {a.Nome} - Média {a.Media}");
+                }
                 
             }
             else

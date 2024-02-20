@@ -15,10 +15,10 @@ namespace ScreenSound.Menus
                 Banda banda = bandasRegistradas[nomeDaBanda];
                 Console.WriteLine("Agora digite o nome do álbum:");
                 string nomeDoAlbum = Console.ReadLine()!;   
-                //Condição se na lista de albums de uma banda existir algum album que tenha o nome igual à nomeDoAlbum
+                //Any: Condição se na lista de albums de uma banda existir algum album que tenha o nome igual à nomeDoAlbum
                 if(banda.albuns.Any(a => a.Nome.Equals(nomeDoAlbum)))
                 {
-                    // Pegar o primeiro álbum da banda que tem o nome nomeDoAlbum
+                    // First: Pegar o primeiro álbum da banda que tem o nome nomeDoAlbum
                     Album album = banda.albuns.First(a => a.Nome.Equals(nomeDoAlbum));
                     Console.WriteLine($"Digite a nota que o álbum {nomeDoAlbum} merece:");
                     AvaliacaoMusica nota = AvaliacaoMusica.Parse(Console.ReadLine()!);
@@ -40,6 +40,8 @@ namespace ScreenSound.Menus
             {
                 Console.WriteLine("ERRO!!!\nEssa banda não está nos nossos registros.");
             }
+            Thread.Sleep(1000);
+            Console.Clear();
         }
     }
 }
